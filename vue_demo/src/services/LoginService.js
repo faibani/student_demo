@@ -1,15 +1,8 @@
-import axios from "axios";
-
-const API_URL = "http://localhost:8080/api"; // make sure the compitible with the backend
+import http from "../http-common.js";
 
 class LoginService {
-  login(credentials) {
-    return axios.post(`${API_URL}/login`, credentials);
-  }
-
-  //need to add method
-  register(studentData) {
-    return axios.post(`${API_URL}/register`, studentData);
+  login(data) {
+    return http.post("/login", data);
   }
 }
 
